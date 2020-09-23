@@ -1,5 +1,35 @@
 <?php
   session_start();
+  include("koneksi.php");
+  // echo '<pre>';
+  // echo session_id()."\n";
+  // var_dump($_SESSION);
+  // echo '</pre>';
+  
+  if ( isset($_SESSION['nim'])) {
+    header("Location: vote.php");
+    exit;
+  }
+
+  if(isset($_POST['nim'])) {
+    $nim = $_POST['nim'];
+    $result = mysqli_query($conn, "SELECT `nim`,`status_vote` FROM `peserta` WHERE nim='$nim' LIMIT 1"); 
+    $row = mysqli_fetch_assoc($result);
+    if ($row != 0 && $row['status_vote'] == 0){
+      $_SESSION['created'] = time();
+      $_SESSION['expire'] = $_SESSION['created'] + (15 * 60);
+      $_SESSION['nim'] = $nim;
+      header("location:vote.php"); 
+    }else if ($row != 0 && $row['status_vote'] != 0) {
+      $_SESSION['message'] = "NIM yang dimasukkan sudah pernah melakukan vote";
+      header("location:index.php");
+      exit;
+    }else{
+      $_SESSION['message'] = "NIM yang dimasukkan tidak valid";
+      header("location:index.php");
+      exit;
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +38,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Voting Kakak Ter | HIMSI</title>
+  <title>Voting Kakak Ter | HIMSI FASILKOM UNSRI</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
@@ -30,12 +60,20 @@
           <div class="column right has-text-centered">
             <h1 class="title is-4">:)</h1>
             <p class="description">Silahkan masukkan NIM anda</p>
-            <form method="POST" id="myForm" action="voteView.php">
+            <form method="POST" id="myForm" action="">
               <div class="field">
                 <div class="control">
-                  <input class="input is-medium" type="text" id="nim" name="nim" placeholder="NIM">
+                  <input required class="input is-medium" type="text" id="nim" name="nim" placeholder="NIM" >
                 </div>
               </div>
+              <?php
+                if (isset($_SESSION["message"])) {?>
+                    <p style = "color: red;margin-bottom: 0.8rem;background-color: #ffd6d6;border-style: solid;border-width: 2px;border-radius: 10px;border-color: red;">&nbsp
+                    <?php echo $_SESSION["message"]; ?> </p> <?php
+                    unset($_SESSION["message"]);
+                    //var_dump($_SESSION);
+                }
+              ?>
               <input type="button" class="button is-block is-info is-fullwidth is-medium" onclick="confirmNIM()" value="Lanjut">
               <!-- <button class="button is-block is-info is-fullwidth is-medium" id="confirm-alert">Lanjut</button> -->
               <br />
@@ -70,12 +108,15 @@
 <script>
 function confirmNIM() {
   var inputVal = document.getElementById("nim").value;
+  if (!inputVal) {
+    return;
+  }
   Swal.fire({
     title: '<strong></strong>',
     icon: 'info',
     title: inputVal,
     html:
-      'Pastikan NIM sudah benar',
+      'Pastikan NIM yang anda masukkan benar',
     showCancelButton: true,
     focusConfirm: false,
     confirmButtonText: 'Lanjut',

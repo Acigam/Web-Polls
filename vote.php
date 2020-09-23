@@ -1,5 +1,20 @@
 <?php
   session_start();
+  if ( !isset($_SESSION["nim"]) ) {
+    header("Location: index.php");
+    exit;
+  }
+  else {
+    $now = time();
+    if ($now > $_SESSION['expire']) {
+      session_destroy();
+    }
+  }
+  echo '<pre>';
+  echo session_id()."\n";
+  var_dump($_SESSION);
+  echo '</pre>';
+  include "koneksi.php";
 ?>
 
 <!DOCTYPE html>
@@ -69,6 +84,7 @@
     <br>
     
     <input type="submit" value="Submit">
+    <a href="logout.php">Logout</a>
   </form>
 
 </body>
