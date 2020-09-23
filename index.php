@@ -21,11 +21,11 @@
       $_SESSION['nim'] = $nim;
       header("location:vote.php"); 
     }else if ($row != 0 && $row['status_vote'] != 0) {
-      $_SESSION['message'] = "NIM yang dimasukkan sudah pernah melakukan vote";
+      $_SESSION['message'] = "NIM yang dimasukkan sudah pernah melakukan vote.";
       header("location:index.php");
       exit;
     }else{
-      $_SESSION['message'] = "NIM yang dimasukkan tidak valid";
+      $_SESSION['message'] = "NIM yang dimasukkan tidak valid!";
       header("location:index.php");
       exit;
     }
@@ -54,7 +54,7 @@
           <div class="column left">
             <img src="img/himsiunsri.png" style="width:45%;" alt="HIMSI">
             <h1 class="title is-1">Voting Kakak Ter</h1>
-            <h2 class="subtitle colored is-4">Website untuk Vote para nominasi kakak Ter tahun 2020</h2>
+            <h2 class="subtitle colored is-4">Website voting para nominasi kakak Ter tahun 2020</h2>
             <p></p>
           </div>
           <div class="column right has-text-centered">
@@ -68,7 +68,7 @@
               </div>
               <?php
                 if (isset($_SESSION["message"])) {?>
-                    <p style = "color: red;margin-bottom: 0.8rem;background-color: #ffd6d6;border-style: solid;border-width: 2px;border-radius: 10px;border-color: red;">&nbsp
+                    <p style = "color: red;margin-bottom: 0.8rem;background-color: #ffd6d6;border-style: solid;border-width: 1px;border-radius: 10px;border-color: red;">&nbsp
                     <?php echo $_SESSION["message"]; ?> </p> <?php
                     unset($_SESSION["message"]);
                     //var_dump($_SESSION);
@@ -77,7 +77,7 @@
               <input type="button" class="button is-block is-info is-fullwidth is-medium" onclick="confirmNIM()" value="Lanjut">
               <!-- <button class="button is-block is-info is-fullwidth is-medium" id="confirm-alert">Lanjut</button> -->
               <br />
-              <small><em>*Satu NIM hanya bisa vote 1x pada e-voting ini</em></small>
+              <small><em>*Satu NIM hanya bisa vote 1x</em></small>
             </form>
           </div>
         </div>
