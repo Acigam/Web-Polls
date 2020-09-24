@@ -1,16 +1,19 @@
 <?php
   session_start();
-  include("koneksi.php");
-  // echo '<pre>';
-  // echo session_id()."\n";
-  // var_dump($_SESSION);
-  // echo '</pre>';
-  
-  if ( isset($_SESSION['nim'])) {
-    header("Location: vote.php");
-    exit;
+  if ( isset($_SESSION["nim"]) ) {
+    session_destroy();
   }
-
+  include("koneksi.php");
+  echo '<pre>';
+  echo session_id()."\n";
+  var_dump($_SESSION);
+  echo '</pre>';
+  
+  // if ( isset($_SESSION['nim'])) {
+  //   header("Location: vote.php");
+  //   exit;
+  // }
+  
   if(isset($_POST['nim'])) {
     $nim = $_POST['nim'];
     $result = mysqli_query($conn, "SELECT `nim`,`status_vote` FROM `peserta` WHERE nim='$nim' LIMIT 1"); 
@@ -29,7 +32,9 @@
       header("location:index.php");
       exit;
     }
+    
   }
+  
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +79,8 @@
                     //var_dump($_SESSION);
                 }
               ?>
-              <input type="button" class="button is-block is-info is-fullwidth is-medium" onclick="confirmNIM()" value="Lanjut">
+              <input type="button" class="button is-block is-info is-fullwidth is-medium" onclick="confirmNIM()" 
+                     value="Lanjut">
               <!-- <button class="button is-block is-info is-fullwidth is-medium" id="confirm-alert">Lanjut</button> -->
               <br />
               <small><em>*Satu NIM hanya bisa vote 1x</em></small>
@@ -106,6 +112,13 @@
   </section>
 </body>
 <script>
+document.getElementById("myForm").addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      event.preventDefault();
+      confirmNIM();
+    }
+});
+
 function confirmNIM() {
   var inputVal = document.getElementById("nim").value;
   if (!inputVal) {
@@ -121,8 +134,7 @@ function confirmNIM() {
     focusConfirm: false,
     confirmButtonText: 'Lanjut',
     reverseButtons: true,
-    showCancelButton: true,
-    showCloseButton: true
+    showCancelButton: true
   }).then((result) => {
     if (result.isConfirmed) {
         document.getElementById("myForm").submit();
