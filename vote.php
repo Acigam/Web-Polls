@@ -1,6 +1,6 @@
 <?php
   session_start();
-  if ( !isset($_SESSION["nim"]) ) {
+  if (!isset($_SESSION["nim"])) {
     header("Location: index.php");
     exit;
   }
@@ -10,85 +10,304 @@
       session_destroy();
     }
   }
-  echo '<pre>';
-  echo session_id()."\n";
-  var_dump($_SESSION);
-  echo '</pre>';
+
+  // echo '<pre>';
+  // echo session_id()."\n";
+  // var_dump($_SESSION);
+  // echo '</pre>';
+
   include "koneksi.php";
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
+
+<!doctype html>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Voting Kakak Ter | HIMSI</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-<body>
-  <form action="voteProses.php">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
+    <title>Voting Kakak Ter | HIMSI FASILKOM UNSRI</title>
 
-    <div>
-      <p>Kakak Ter1:</p>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="id_ter1" id="A_Ter1" value="1">
-        <label class="form-check-label" for="id_ter1">A_Ter1</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="id_ter1" id="B_Ter1" value="2">
-        <label class="form-check-label" for="B_Ter1">B_Ter1</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="id_ter1" id="C_Ter1" value="3">
-        <label class="form-check-label" for="C_Ter1">C_Ter1</label>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="css/vote.css" rel="stylesheet">
+  </head>
+  <body>
+  <header>
+  
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container d-flex justify-content-center justify-content-md-between" style="color:white">
+      <a class="navbar-brand d-flex align-items-center" >
+        <i class="fas fa-vote-yea"></i>
+        <strong style="padding-bottom:2px">&nbspVoting Kakak Ter&nbsp</strong>
+      </a>
+      <a class="navbar-brand" href="http://himsiunsri.org">
+        <img src="img/himsi-unsri.png" style="width:85px;" alt="HIMSI">
+      </a>
+    </div>
+  </div>
+  </header>
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Vote para nominasi kakak Ter</h1>
+      <p class="judul" style="color:#2793DA">Terdapat 8 kategori pada voting ini:<br>Teramah, Tercantik, Terganteng, Terjail, Terjutek, Terlucu, Termanis, dan Terseram.</p>
+      <p></p>
+      
+    </div>
+  </section>
+  <p style="background: #FFAEBC; margin: 0px; font-size:3px">&nbsp</p>
+  <p style="background: #A0E7E5; margin: 0px; font-size:3px">&nbsp</p>
+  <p style="background: #B4F8C8; margin: 0px; font-size:3px">&nbsp</p>
+<main role="main">
+<form action="voteproses.php" method="POST">   
+
+  <!-- Teramah -->
+  <div class="album py-5" style="background-color: rgb(247, 247, 247)">
+    <div class="container">
+      <h1 class="jumbotron-heading-nominasi"><a style="box-shadow: .2rem .2rem .5rem #FFAEBC;">Nominasi Kakak Teramah</a></h1>
+      <div class="row">
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm ">
+          <img class="card-img-top" src="img\nominasi\teramah\A.Salman Alfarizi.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_teramah" value="1" required>
+                  <label class="form-check-label" for="1">A. Salman Alfarizi</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="img\nominasi\teramah\Dytha Ananda Widhiarso.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_teramah" value="2">
+                  <label class="form-check-label" for="2">Dytha Ananda Widhiarso</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="img\nominasi\teramah\Juwinda Septia.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_teramah" value="3">
+                  <label class="form-check-label" for="3">Juwinda Septia</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="img\nominasi\teramah\Muhammad Fernando.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_teramah" value="4">
+                  <label class="form-check-label" for="4">Muhammad Fernando</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="img\nominasi\teramah\Novita Sari.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_teramah" value="5">
+                  <label class="form-check-label" for="5">Novita Sari</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="img\nominasi\teramah\Sakinah.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_teramah" value="6">
+                  <label class="form-check-label" for="6">Sakinah</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="img\nominasi\teramah\Suciati Nurrohmah.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_teramah" value="7">
+                  <label class="form-check-label" for="7">Suciati Nurrohmah</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <p style="background: #e3e3e3; margin: 0px; font-size:1px">&nbsp</p>
+  </div>
 
-    <br>
-
-    <div>
-      <p>Kakak Ter2:</p>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="id_ter2" id="A_ter2" value="1">
-        <label class="form-check-label" for="id_ter2">A_Ter2</label>
+  <!-- Tercantik -->
+  <div class="album py-5" style="background-color: #f2f2f2">
+    <div class="container">
+      <h1 class="jumbotron-heading-nominasi"><a style="box-shadow: .2rem .2rem .5rem #A0E7E5;">Nominasi Kakak Tercantik</a></h1>
+      <div class="row">
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm ">
+          <img class="card-img-top" src="img\nominasi\tercantik\Gladys Dwi Mawarni.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_tercantik" value="1" required>
+                  <label class="form-check-label" for="1">Gladys Dwi Mawarni</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="img\nominasi\tercantik\Indri Dwi Damayanti.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_tercantik" value="2">
+                  <label class="form-check-label" for="2">Indri Dwi Damayanti</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="img\nominasi\tercantik\Kania Putri Khalilah.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_tercantik" value="3">
+                  <label class="form-check-label" for="3">Kania Putri Khalilah</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="img\nominasi\tercantik\Nurullah Marina Kelana.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_tercantik" value="4">
+                  <label class="form-check-label" for="4">Nurullah Marina Kelana</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="img\nominasi\tercantik\Putri Ayu Maysuroh.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_tercantik" value="5">
+                  <label class="form-check-label" for="5">Putri Ayu Maysuroh</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="img\nominasi\tercantik\Ratu Amalia.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_tercantik" value="6">
+                  <label class="form-check-label" for="6">Ratu Amalia</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top" src="img\nominasi\tercantik\Sicillia Rizki Ananda.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_tercantik" value="7">
+                  <label class="form-check-label" for="7">Sicillia Rizki Ananda</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="id_ter2" id="B_ter2" value="2">
-        <label class="form-check-label" for="B_ter2">B_Ter2</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="id_ter2" id="C_ter2" value="3">
-        <label class="form-check-label" for="C_ter2">C_Ter2</label>
+      <div class="wrapper">
+        <button type="submit" class="btn btn-info btn-lg my-btn-submit" >Vote</button>
       </div>
     </div>
     
-    <br>
+    <p style="background: #FFAEBC; margin: 0px; font-size:3px">&nbsp</p>
+    <p style="background: #A0E7E5; margin: 0px; font-size:3px">&nbsp</p>
+    <p style="background: #B4F8C8; margin: 0px; font-size:3px">&nbsp</p>
+  </div>
 
-    <div>
-      <p>Kakak Ter3:</p>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="id_ter3" id="A_ter3" value="1">
-        <label class="form-check-label" for="id_ter3">A_Ter3</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="id_ter3" id="B_ter3" value="3">
-        <label class="form-check-label" for="B_ter3">B_Ter3</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="id_ter3" id="C_ter3" value="3">
-        <label class="form-check-label" for="C_ter3">C_Ter3</label>
-      </div>
-    </div>
-    
-    <br>
-    
-    <input type="submit" value="Submit">
-    <a href="logout.php">Logout</a>
-  </form>
 
+  
+</form>
+</main>
+
+<footer class="text-muted">
+  <div class="container">
+    <p><a href="#" class="backtop">Back to top</a></p>
+    <p>
+      <a> Dinas Ristek PTI - HIMSI UNSRI 2020 | Hosted by&nbsp<a href="https://www.hostingan.id/">Hostingan ID </a></a>
+    </p>
+  </div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="js/vendor/jquery-slim.min.js"><\/script>')</script>
+      <script src="js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>

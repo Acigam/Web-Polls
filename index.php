@@ -9,19 +9,16 @@
   var_dump($_SESSION);
   echo '</pre>';
   
-  // if ( isset($_SESSION['nim'])) {
-  //   header("Location: vote.php");
-  //   exit;
-  // }
   
   if(isset($_POST['nim'])) {
     $nim = $_POST['nim'];
-    $result = mysqli_query($conn, "SELECT `nim`,`status_vote` FROM `peserta` WHERE nim='$nim' LIMIT 1"); 
+    $result = mysqli_query($conn, "SELECT `id_peserta`,`nim`,`status_vote` FROM `peserta` WHERE nim='$nim' LIMIT 1"); 
     $row = mysqli_fetch_assoc($result);
     if ($row != 0 && $row['status_vote'] == 0){
       $_SESSION['created'] = time();
-      $_SESSION['expire'] = $_SESSION['created'] + (15 * 60);
+      $_SESSION['expire'] = $_SESSION['created'] + (10 * 60);
       $_SESSION['nim'] = $nim;
+      $_SESSION['id_peserta'] = $row['id_peserta'];
       header("location:vote.php"); 
     }else if ($row != 0 && $row['status_vote'] != 0) {
       $_SESSION['message'] = "NIM yang dimasukkan sudah pernah melakukan vote.";
@@ -57,7 +54,7 @@
       <div class="column is-8 is-offset-2 register">
         <div class="columns">
           <div class="column left">
-            <img src="img/himsiunsri.png" style="width:45%;" alt="HIMSI">
+            <img src="img/himsi-unsri.png" style="width:45%;" alt="HIMSI">
             <h1 class="title is-1">Voting Kakak Ter</h1>
             <h2 class="subtitle colored is-4">Website voting para nominasi kakak Ter tahun 2020</h2>
             <p></p>
@@ -129,7 +126,7 @@ function confirmNIM() {
     icon: 'info',
     title: inputVal,
     html:
-      'Pastikan NIM yang anda masukkan benar',
+      'Pastikan NIM yang anda masukkan benar dan merupakan NIM anda.',
     showCancelButton: true,
     focusConfirm: false,
     confirmButtonText: 'Lanjut',
