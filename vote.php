@@ -29,6 +29,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
     <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
+    <script src="js/lazysizes.min.js" async></script>
     <title>Voting Kakak Ter | HIMSI FASILKOM UNSRI</title>
 
     <!-- Bootstrap core CSS -->
@@ -63,7 +64,7 @@
         <strong style="padding-bottom:2px">&nbspVoting Kakak Ter&nbsp</strong>
       </a>
       <a class="navbar-brand" href="http://himsiunsri.org">
-        <img src="img/himsi-unsri.png" style="width:85px;" alt="HIMSI">
+        <img data-src="img/himsi-unsri.png" class="lazyload" alt="" style="width:85px;">
       </a>
     </div>
   </div>
@@ -86,11 +87,11 @@
   <!-- Teramah -->
   <div class="album py-5" style="background-color: rgb(247, 247, 247)">
     <div class="container">
-      <h1 class="jumbotron-heading-nominasi"><a style="box-shadow: .2rem .2rem .5rem #FFAEBC;">Nominasi Kakak Teramah</a></h1>
+      <h1 class="jumbotron-heading-nominasi"><a style="box-shadow: .1rem .1rem .5rem #FFAEBC;">Nominasi Kakak Teramah</a></h1>
       <div class="row">
         <div class="col-md-3 col-6 d-flex align-items-stretch">
           <div class="card mb-4 shadow-sm ">
-          <img class="card-img-top" src="img\nominasi\teramah\A.Salman Alfarizi.png" alt="Card image cap">
+          <img class="card-img-top lazyload" data-src="img\nominasi\teramah\A.Salman Alfarizi.png" alt="">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="form-check" style="margin-left:3px;">  
@@ -103,7 +104,7 @@
         </div>
         <div class="col-md-3 col-6 d-flex align-items-stretch">
           <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="img\nominasi\teramah\Dytha Ananda Widhiarso.png" alt="Card image cap">
+          <img class="card-img-top lazyload" data-src="img\nominasi\teramah\Dytha Ananda Widhiarso.png" alt="">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="form-check" style="margin-left:3px;">  
@@ -116,7 +117,7 @@
         </div>
         <div class="col-md-3 col-6 d-flex align-items-stretch">
           <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="img\nominasi\teramah\Juwinda Septia.png" alt="Card image cap">
+          <img class="card-img-top lazyload" data-src="img\nominasi\teramah\Juwinda Septia.png" alt="">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="form-check" style="margin-left:3px;">  
@@ -129,7 +130,7 @@
         </div>
         <div class="col-md-3 col-6 d-flex align-items-stretch">
           <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="img\nominasi\teramah\Muhammad Fernando.png" alt="Card image cap">
+          <img class="card-img-top lazyload" data-src="img\nominasi\teramah\Muhammad Fernando.png" alt="">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="form-check" style="margin-left:3px;">  
@@ -142,7 +143,7 @@
         </div>
         <div class="col-md-3 col-6 d-flex align-items-stretch">
           <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="img\nominasi\teramah\Novita Sari.png" alt="Card image cap">
+          <img class="card-img-top lazyload" data-src="img\nominasi\teramah\Novita Sari.png" alt="">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="form-check" style="margin-left:3px;">  
@@ -155,7 +156,7 @@
         </div>
         <div class="col-md-3 col-6 d-flex align-items-stretch">
           <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="img\nominasi\teramah\Sakinah.png" alt="Card image cap">
+          <img class="card-img-top lazyload" data-src="img\nominasi\teramah\Sakinah.png" alt="">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="form-check" style="margin-left:3px;">  
@@ -168,7 +169,7 @@
         </div>
         <div class="col-md-3 col-6 d-flex align-items-stretch">
           <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="img\nominasi\teramah\Suciati Nurrohmah.png" alt="Card image cap">
+          <img class="card-img-top lazyload" data-src="img\nominasi\teramah\Suciati Nurrohmah.png" alt="">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="form-check" style="margin-left:3px;">  
@@ -181,17 +182,17 @@
         </div>
       </div>
     </div>
-    <p style="background: #e3e3e3; margin: 0px; font-size:1px">&nbsp</p>
+    <hr style="height:1.5px;border-width:0;color:#e3e3e3;background-color:#e3e3e3;margin:0px">
   </div>
 
   <!-- Tercantik -->
   <div class="album py-5" style="background-color: #f2f2f2">
     <div class="container">
-      <h1 class="jumbotron-heading-nominasi"><a style="box-shadow: .2rem .2rem .5rem #A0E7E5;">Nominasi Kakak Tercantik</a></h1>
+      <h1 class="jumbotron-heading-nominasi"><a style="box-shadow: .1rem .1rem .5rem #A0E7E5;">Nominasi Kakak Tercantik</a></h1>
       <div class="row">
         <div class="col-md-3 col-6 d-flex align-items-stretch">
           <div class="card mb-4 shadow-sm ">
-          <img class="card-img-top" src="img\nominasi\tercantik\Gladys Dwi Mawarni.png" alt="Card image cap">
+          <img class="card-img-top lazyload" data-src="img\nominasi\tercantik\Gladys Dwi Mawarni.png" alt="">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="form-check" style="margin-left:3px;">  
@@ -204,7 +205,7 @@
         </div>
         <div class="col-md-3 col-6 d-flex align-items-stretch">
           <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="img\nominasi\tercantik\Indri Dwi Damayanti.png" alt="Card image cap">
+          <img class="card-img-top lazyload" data-src="img\nominasi\tercantik\Indri Dwi Damayanti.png" alt="">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="form-check" style="margin-left:3px;">  
@@ -217,7 +218,7 @@
         </div>
         <div class="col-md-3 col-6 d-flex align-items-stretch">
           <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="img\nominasi\tercantik\Kania Putri Khalilah.png" alt="Card image cap">
+          <img class="card-img-top lazyload" data-src="img\nominasi\tercantik\Kania Putri Khalilah.png" alt="">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="form-check" style="margin-left:3px;">  
@@ -230,7 +231,7 @@
         </div>
         <div class="col-md-3 col-6 d-flex align-items-stretch">
           <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="img\nominasi\tercantik\Nurullah Marina Kelana.png" alt="Card image cap">
+          <img class="card-img-top lazyload" data-src="img\nominasi\tercantik\Nurullah Marina Kelana.png" alt="">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="form-check" style="margin-left:3px;">  
@@ -243,7 +244,7 @@
         </div>
         <div class="col-md-3 col-6 d-flex align-items-stretch">
           <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="img\nominasi\tercantik\Putri Ayu Maysuroh.png" alt="Card image cap">
+          <img class="card-img-top lazyload" data-src="img\nominasi\tercantik\Putri Ayu Maysuroh.png" alt="">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="form-check" style="margin-left:3px;">  
@@ -256,7 +257,7 @@
         </div>
         <div class="col-md-3 col-6 d-flex align-items-stretch">
           <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="img\nominasi\tercantik\Ratu Amalia.png" alt="Card image cap">
+          <img class="card-img-top lazyload" data-src="img\nominasi\tercantik\Ratu Amalia.png" alt="">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="form-check" style="margin-left:3px;">  
@@ -269,7 +270,7 @@
         </div>
         <div class="col-md-3 col-6 d-flex align-items-stretch">
           <div class="card mb-4 shadow-sm">
-          <img class="card-img-top" src="img\nominasi\tercantik\Sicillia Rizki Ananda.png" alt="Card image cap">
+          <img class="card-img-top lazyload" data-src="img\nominasi\tercantik\Sicillia Rizki Ananda.png" alt="">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                 <div class="form-check" style="margin-left:3px;">  
@@ -281,8 +282,9 @@
           </div>
         </div>
       </div>
+
       <div class="wrapper">
-        <button type="submit" class="btn btn-info btn-lg my-btn-submit" >Vote</button>
+        <button type="submit" class="btn btn-primary btn-lg my-btn-submit" >Vote</button>
       </div>
     </div>
     
@@ -309,5 +311,16 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+
+      <script>
+      setInterval(function(){
+          logout();
+      },(15 * 60) * (1000));
+
+      function logout(){
+          document.location = "logout.php"
+      }
+      </script>
+
 </body>
 </html>
