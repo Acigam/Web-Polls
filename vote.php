@@ -10,12 +10,10 @@
       session_destroy();
     }
   }
-
   // echo '<pre>';
   // echo session_id()."\n";
   // var_dump($_SESSION);
   // echo '</pre>';
-
   include "koneksi.php";
 ?>
 
@@ -75,17 +73,16 @@
       <h1 class="jumbotron-heading">Vote para nominasi kakak Ter</h1>
       <p class="judul" style="color:#2793DA">Terdapat 8 kategori pada voting ini:<br>Teramah, Tercantik, Terganteng, Terjail, Terjutek, Terlucu, Termanis, dan Terseram.</p>
       <p></p>
-      
+      <div class="container"><div id="expiredtime" style="display: none;"><?php echo $_SESSION['expire'] ?></div>
     </div>
   </section>
-  <p style="background: #FFAEBC; margin: 0px; font-size:3px">&nbsp</p>
-  <p style="background: #A0E7E5; margin: 0px; font-size:3px">&nbsp</p>
-  <p style="background: #B4F8C8; margin: 0px; font-size:3px">&nbsp</p>
+  <hr class="red"> <hr class="blue"> <hr class="green">
+
 <main role="main">
 <form action="voteproses.php" method="POST">   
 
-  <!-- Teramah -->
-  <div class="album py-5" style="background-color: rgb(247, 247, 247)">
+  <!-- Nominasi Teramah -->
+  <div class="album py-5" style="background-color: #f7f7f7">
     <div class="container">
       <h1 class="jumbotron-heading-nominasi"><a style="box-shadow: .1rem .1rem .5rem #FFAEBC;">Nominasi Kakak Teramah</a></h1>
       <div class="row">
@@ -182,10 +179,9 @@
         </div>
       </div>
     </div>
-    <hr style="height:1.5px;border-width:0;color:#e3e3e3;background-color:#e3e3e3;margin:0px">
-  </div>
+  </div><hr class="grey"> 
 
-  <!-- Tercantik -->
+  <!-- Nominasi Tercantik -->
   <div class="album py-5" style="background-color: #f2f2f2">
     <div class="container">
       <h1 class="jumbotron-heading-nominasi"><a style="box-shadow: .1rem .1rem .5rem #A0E7E5;">Nominasi Kakak Tercantik</a></h1>
@@ -283,21 +279,575 @@
         </div>
       </div>
 
-      <div class="wrapper">
-        <button type="submit" class="btn btn-primary btn-lg my-btn-submit" >Vote</button>
+      
+    </div>
+  </div><hr class="grey"> 
+
+  <!-- Nominasi Terganteng -->
+  <div class="album py-5" style="background-color: #f7f7f7">
+    <div class="container">
+      <h1 class="jumbotron-heading-nominasi"><a style="box-shadow: .1rem .1rem .5rem #B4F8C8;">Nominasi Kakak Terganteng</a></h1>
+      <div class="row">
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm ">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terganteng\Addien Putra Arkananta.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terganteng" value="1" required>
+                  <label class="form-check-label" for="1">Addien Putra Arkananta</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terganteng\Aqbil Fattaqqoh.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terganteng" value="2">
+                  <label class="form-check-label" for="2">Aqbil Fattaqqoh</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terganteng\Muhammad Aziz Antabari Acta.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terganteng" value="3">
+                  <label class="form-check-label" for="3">Muhammad Aziz Antabari Acta</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terganteng\Muhammad Maftuh Ihsan.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terganteng" value="4">
+                  <label class="form-check-label" for="4">Muhammad Maftuh Ihsan</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terganteng\Muhammad Rozan Azzikri.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terganteng" value="5">
+                  <label class="form-check-label" for="5">Muhammad Rozan Azzikri</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terganteng\Yulizar Affandy.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terganteng" value="6">
+                  <label class="form-check-label" for="6">Yulizar Affandy</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    
-    <p style="background: #FFAEBC; margin: 0px; font-size:3px">&nbsp</p>
-    <p style="background: #A0E7E5; margin: 0px; font-size:3px">&nbsp</p>
-    <p style="background: #B4F8C8; margin: 0px; font-size:3px">&nbsp</p>
+  </div><hr class="grey">
+  
+  <!-- Nominasi Terjail -->
+  <div class="album py-5" style="background-color: #f2f2f2">
+    <div class="container">
+      <h1 class="jumbotron-heading-nominasi"><a style="box-shadow: .1rem .1rem .5rem #FFAEBC;">Nominasi Kakak Terjail</a></h1>
+      <div class="row">
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm ">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terjail\Iwan Mandala.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terjail" value="1" required>
+                  <label class="form-check-label" for="1">Iwan Mandala</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terjail\Lulu Salsabila.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terjail" value="2">
+                  <label class="form-check-label" for="2">Lulu Salsabila</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terjail\Muhammad Syahridho Alghifary.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terjail" value="3">
+                  <label class="form-check-label" for="3">Muhammad Syahridho Alghifary</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terjail\Poppy Nurisa.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terjail" value="4">
+                  <label class="form-check-label" for="4">Poppy Nurisa</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terjail\Septiani Aulia Putri.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terjail" value="5">
+                  <label class="form-check-label" for="5">Septiani Aulia Putri</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terjail\Trievanni Chantika.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terjail" value="6">
+                  <label class="form-check-label" for="6">Trievanni Chantika</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><hr class="grey"> 
+
+  <!-- Nominasi Terjutek -->
+  <div class="album py-5" style="background-color: #f7f7f7">
+    <div class="container">
+      <h1 class="jumbotron-heading-nominasi"><a style="box-shadow: .1rem .1rem .5rem #A0E7E5;">Nominasi Kakak Terjutek</a></h1>
+      <div class="row">
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm ">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terjutek\Ahmad Hafizh Zahran.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terjutek" value="1" required>
+                  <label class="form-check-label" for="1">Ahmad Hafizh Zahran</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terjutek\Anindya Dewi Maharani.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terjutek" value="2">
+                  <label class="form-check-label" for="2">Anindya Dewi Maharani</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terjutek\Annisa Nabila.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terjutek" value="3">
+                  <label class="form-check-label" for="3">Annisa Nabila</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terjutek\Muhammad Chendy Rizky Pratama.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terjutek" value="4">
+                  <label class="form-check-label" for="4">Muhammad Chendy Rizky Pratama</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terjutek\Naberi Oktaria.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terjutek" value="5">
+                  <label class="form-check-label" for="5">Naberi Oktaria</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terjutek\Raffilia Mutiara Purwani.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terjutek" value="6">
+                  <label class="form-check-label" for="6">Raffilia Mutiara Purwani</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </div><hr class="grey">
+
+  <!-- Nominasi Terlucu -->
+  <div class="album py-5" style="background-color: #f2f2f2">
+    <div class="container">
+      <h1 class="jumbotron-heading-nominasi"><a style="box-shadow: .1rem .1rem .5rem #B4F8C8;">Nominasi Kakak Terlucu</a></h1>
+      <div class="row">
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm ">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terlucu\Aulia Syahrani.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terlucu" value="1" required>
+                  <label class="form-check-label" for="1">Aulia Syahrani</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terlucu\Fahlevi Dwi Yauma.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terlucu" value="2">
+                  <label class="form-check-label" for="2">Fahlevi Dwi Yauma</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terlucu\Indra Tiara Saputra.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terlucu" value="3">
+                  <label class="form-check-label" for="3">Indra Tiara Saputra</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terlucu\M. C. Adam Ikhsaniova.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terlucu" value="4">
+                  <label class="form-check-label" for="4">M. C. Adam Ikhsaniova</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terlucu\Muhammad Rozan Azzikri.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terlucu" value="5">
+                  <label class="form-check-label" for="5">Muhammad Rozan Azzikri</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terlucu\Rahma Destriani.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terlucu" value="6">
+                  <label class="form-check-label" for="6">Rahma Destriani</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terlucu\Thomas Al Kadafi.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terlucu" value="7">
+                  <label class="form-check-label" for="7">Thomas Al Kadafi</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><hr class="grey">
+
+  <!-- Nominasi Termanis -->
+  <div class="album py-5" style="background-color: #f2f2f2">
+    <div class="container">
+      <h1 class="jumbotron-heading-nominasi"><a style="box-shadow: .1rem .1rem .5rem #FFAEBC;">Nominasi Kakak Termanis</a></h1>
+      <div class="row">
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm ">
+          <img class="card-img-top lazyload" data-src="img\nominasi\termanis\Dian Apriani.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_termanis" value="1" required>
+                  <label class="form-check-label" for="1">Dian Apriani</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\termanis\Fadilah Imam Iqtidar.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_termanis" value="2">
+                  <label class="form-check-label" for="2">Fadilah Imam Iqtidar</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\termanis\Halimah.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_termanis" value="3">
+                  <label class="form-check-label" for="3">Halimah</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\termanis\Mahdiyah ‘Afifah Sari.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_termanis" value="4">
+                  <label class="form-check-label" for="4">Mahdiyah ‘Afifah Sari</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\termanis\Nadhifa Amira.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_termanis" value="5">
+                  <label class="form-check-label" for="5">Nadhifa Amira</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\termanis\Nadya Anggraini.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_termanis" value="6">
+                  <label class="form-check-label" for="6">Nadya Anggraini</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\termanis\Naufal Alghifary.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_termanis" value="7">
+                  <label class="form-check-label" for="7">Naufal Alghifary</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><hr class="grey"> 
+
+  <!-- Nominasi Terseram -->
+  <div class="album py-5" style="background-color: #f7f7f7">
+    <div class="container">
+      <h1 class="jumbotron-heading-nominasi"><a style="box-shadow: .1rem .1rem .5rem #A0E7E5;">Nominasi Kakak Terseram</a></h1>
+      <div class="row">
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm ">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terseram\Aulia Syahrani.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terseram" value="1" required>
+                  <label class="form-check-label" for="1">Aulia Syahrani</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terseram\Cici Elna Sari.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terseram" value="2">
+                  <label class="form-check-label" for="2">Cici Elna Sari</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terseram\Dicha Pratiwi.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terseram" value="3">
+                  <label class="form-check-label" for="3">Dicha Pratiwi</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terseram\Muhammad Fandra Eka Pratama.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terseram" value="4">
+                  <label class="form-check-label" for="4">Muhammad Fandra Eka Pratama</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terseram\Oktrioka Gisbu.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terseram" value="5">
+                  <label class="form-check-label" for="5">Oktrioka Gisbu</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+          <img class="card-img-top lazyload" data-src="img\nominasi\terseram\Poppy Nurisa.png" alt="">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check" style="margin-left:3px;">  
+                  <input class="form-check-input" type="radio" name="id_terseram" value="6">
+                  <label class="form-check-label" for="6">Poppy Nurisa</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-
+  <div class="album py-5" style="background-color: #f7f7f7">
+    <div class="container">
+        <div class="wrapper">
+          <button type="submit" class="btn btn-primary btn-lg my-btn-submit">
+           <a style="font-weight: 700">Vote</a>
+          </button>
+        </div>
+    </div>
+  </div>
   
+
 </form>
 </main>
 
+<hr class="red"> <hr class="blue"> <hr class="green">
 <footer class="text-muted">
   <div class="container">
     <p><a href="#" class="backtop">Back to top</a></p>
@@ -313,13 +863,18 @@
       <script src="js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 
       <script>
-      setInterval(function(){
-          logout();
-      },(15 * 60) * (1000));
+        var expired = parseInt(document.getElementById("expiredtime").innerHTML);
+        var d = new Date();
+        var n = d.getTime();
+        n = Math.round(n / 1000);
 
-      function logout(){
+        setInterval(function(){
+          logout();
+        }, (expired-n) * 1000);
+
+        function logout(){
           document.location = "logout.php"
-      }
+        }
       </script>
 
 </body>

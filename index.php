@@ -4,11 +4,10 @@
     session_destroy();
   }
   include("koneksi.php");
-  echo '<pre>';
-  echo session_id()."\n";
-  var_dump($_SESSION);
-  echo '</pre>';
-  
+  // echo '<pre>';
+  // echo session_id()."\n";
+  // var_dump($_SESSION);
+  // echo '</pre>';
   
   if(isset($_POST['nim'])) {
     $nim = $_POST['nim'];
@@ -16,7 +15,7 @@
     $row = mysqli_fetch_assoc($result);
     if ($row != 0 && $row['status_vote'] == 0){
       $_SESSION['created'] = time();
-      $_SESSION['expire'] = $_SESSION['created'] + (10 * 60);
+      $_SESSION['expire'] = $_SESSION['created'] + (17 * 60);
       $_SESSION['nim'] = $nim;
       $_SESSION['id_peserta'] = $row['id_peserta'];
       header("location:vote.php"); 

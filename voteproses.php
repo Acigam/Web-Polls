@@ -17,10 +17,16 @@
   $id_peserta = $_SESSION['id_peserta'];
   $id_teramah = $_POST['id_teramah'];
   $id_tercantik = $_POST['id_tercantik'];
+  $id_terganteng = $_POST['id_terganteng'];
+  $id_terjail = $_POST['id_terjail'];
+  $id_terjutek = $_POST['id_terjutek'];
+  $id_terlucu = $_POST['id_terlucu'];
+  $id_termanis = $_POST['id_termanis'];
+  $id_terseram = $_POST['id_terseram'];
   $time = date('Y-m-d H:i:s');
 
-  $query = "INSERT INTO `vote` (`id_vote`, `id_peserta`, `id_teramah`, `id_tercantik`, `id_terganteng`, `id_terjail`, `id_terjutek`, `id_terlucu`, `id_terseram`, `datetime`) 
-            VALUES (NULL, '$id_peserta', '$id_teramah', '$id_tercantik', '1', '1', '1', '1', '1', '$time')";
+  $query = "INSERT INTO `vote` (`id_vote`, `id_peserta`, `id_teramah`, `id_tercantik`, `id_terganteng`, `id_terjail`, `id_terjutek`, `id_terlucu`,`id_termanis`, `id_terseram`, `datetime`) 
+            VALUES (NULL, '$id_peserta', '$id_teramah', '$id_tercantik', '$id_terganteng', '$id_terjail', '$id_terjutek', '$id_terlucu', '$id_termanis', '$id_terseram', '$time')";
 
   $result = mysqli_query($conn, $query);
   if(!$result){
@@ -45,7 +51,7 @@
     }
     else{
       echo "Error 22, please contact admin.". mysqli_error($conn);
-  }
+    }
   }
   ?>
 

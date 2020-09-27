@@ -37,7 +37,7 @@ input[type='radio'] {
 }
 
 .jumbotron-heading-nominasi {
-  text-align: center;
+  text-align: left;
   font-size: 1.6rem;
   font-weight: 400;
   margin: 20px 10px 30px 0px;
@@ -47,6 +47,19 @@ input[type='radio'] {
   background-color: #fff;
   border-radius: 6px;
   padding: 5px 30px 5px 30px;
+}
+
+hr.red{
+  height:4px;border-width:0;background-color:#FFAEBC;margin:0px
+}
+hr.blue{
+  height:4px;border-width:0;background-color:#A0E7E5;margin:0px
+}
+hr.green{
+  height:4px;border-width:0;background-color:#B4F8C8;margin:0px
+}
+hr.grey{
+  height:1.5px;border-width:0;color:#e3e3e3;background-color:#e3e3e3;margin:0px
 }
 
 .wrapper {
